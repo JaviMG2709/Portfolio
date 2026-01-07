@@ -1,10 +1,707 @@
 ---
-import RobotBackground from "../components/RobotBackground.jsx";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<section class="relative min-h-screen overflow-hidden bg-black text-white">
-    <RobotBackground client:load />
-    <div class="relative z-10 flex items-center justify-center min-h-screen">
-        <h1 class="opacity-70">Prueba 3D</h1>
-    </div>
-</section>
+<Layout title="Home">
+    <!-- HOME / HERO -->
+    <section
+            id="home"
+            class="relative min-h-screen overflow-hidden bg-[#0b0b0b] flex items-center"
+    >
+        <!-- glow verde suave (fondo) -->
+        <div class="pointer-events-none absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-emerald-500/20 blur-[120px]"></div>
+        <div class="pointer-events-none absolute -left-64 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-emerald-500/10 blur-[120px]"></div>
+
+        <!-- Contenido principal -->
+        <div class="relative w-full max-w-6xl mx-auto px-6">
+            <div class="grid items-center gap-12 lg:grid-cols-2">
+                <!-- TEXTO -->
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl font-extrabold tracking-tight sm:text-6xl">
+                            <span class="block text-emerald-400 drop-shadow-[0_0_12px_rgba(16,185,129,0.35)]">
+                                Desarrollador
+                            </span>
+                        </h1>
+
+                        <!-- SUBTÍTULO -->
+                        <h2 class="text-xl sm:text-2xl font-semibold text-white/90 flex items-center gap-2">
+                            Hola <span class="text-2xl">👋</span>
+                        </h2>
+
+                        <!-- TEXTO -->
+                        <p class="max-w-xl text-white/70 leading-relaxed">
+                            Estoy en el último año de Ingeniería Informática y me encanta crear proyectos donde la tecnología y la creatividad van de la mano.
+                            Disfruto aprendiendo cosas nuevas, enfrentándome a retos y mejorando cada día, tanto a nivel técnico como personal.
+                        </p>
+                    </div>
+
+                    <div>
+                        <a
+                                href="/cv/JavierMorenoGarciaCV.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_30px_rgba(16,185,129,0.25)] transition hover:bg-emerald-400"
+                        >
+                            Curriculum
+                        </a>
+                    </div>
+                </div>
+
+                <!-- IMAGEN -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative animate-float-y">
+                        <div class="pointer-events-none absolute inset-0 rounded-full bg-emerald-500/25 blur-[40px]"></div>
+
+                        <div class="relative h-72 w-72 overflow-hidden rounded-full border-4 border-emerald-400/80 shadow-[0_0_60px_rgba(16,185,129,0.25)] sm:h-96 sm:w-96">
+                            <img
+                                    src="/imagenes/FotoCVcopia.png"
+                                    alt="Foto de perfil"
+                                    class="h-full w-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator (solo visual, no clicable) -->
+        <div
+                aria-hidden="true"
+                class="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-80"
+        >
+            <div class="flex flex-col items-center text-emerald-400 animate-bounce">
+                <span class="text-lg leading-none">⌄</span>
+                <span class="text-lg leading-none -mt-2">⌄</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seccion Formacion -->
+    <section id="formacion" class="py-44">
+        <div class="mx-auto w-full max-w-6xl px-6">
+            <!-- Título -->
+            <div class="mb-16 text-center">
+                <h2 class="text-3xl tracking-[0.2em] text-emerald-200/80">
+                    FORMACIÓN
+                </h2>
+                <div class="mx-auto mt-6 h-px w-full max-w-3xl bg-white/10"></div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Línea central -->
+                <div class="formacion-line absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-emerald-400/30 md:block"></div>
+
+                <!-- Items -->
+                <div class="space-y-16">
+                    <!-- ITEM 1 -->
+                    <div class="formacion-item grid items-start gap-10 md:grid-cols-[1fr_auto_1fr]">
+                        <!-- Izquierda (años + tipo) -->
+                        <div class="formacion-left text-right opacity-0 translate-x-[-24px]">
+                            <div class="text-sm tracking-[0.35em] text-emerald-200/80">2022–2026</div>
+                            <div class="mt-2 text-xs tracking-[0.35em] text-white/60">Grado en Ingeniería Informática</div>
+                        </div>
+
+                        <!-- Punto -->
+                        <div class="hidden md:flex items-start justify-center pt-1">
+                            <div class="h-2 w-2 rounded-full bg-emerald-400"></div>
+                        </div>
+
+                        <!-- Derecha (título + descripción) -->
+                        <div class="formacion-right opacity-0 translate-x-[24px]">
+                            <h3 class="text-sm tracking-[0.35em] text-emerald-200/90">UNIVERSIDAD</h3>
+                            <p class="mt-4 max-w-xl text-sm leading-7 text-white/65">
+                                Cursé el Grado en Ingeniería Informática en la Universidad de Castilla-La Mancha (UCLM), dentro
+                                de la Escuela Superior de Informática (ESI), donde adquirí una sólida formación en desarrollo
+                                de software, arquitectura de sistemas y nuevas tecnologías.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="formacion-item grid items-start gap-10 md:grid-cols-[1fr_auto_1fr]">
+                        <div class="formacion-left text-right opacity-0 translate-x-[-24px]">
+                            <div class="text-sm tracking-[0.35em] text-emerald-200/80">2020–2022</div>
+                            <div class="mt-2 text-xs tracking-[0.35em] text-white/60">Grado Superior</div>
+                            <div class="mt-2 text-xs tracking-[0.35em] text-white/60">Desarrollo de Aplicaciones Multiplataforma</div>
+                        </div>
+
+                        <div class="hidden md:flex items-start justify-center pt-1">
+                            <div class="h-2 w-2 rounded-full bg-emerald-400"></div>
+                        </div>
+
+                        <div class="formacion-right opacity-0 translate-x-[24px]">
+                            <h3 class="text-sm tracking-[0.35em] text-emerald-200/90">Formación Profesional</h3>
+                            <p class="mt-4 max-w-xl text-sm leading-7 text-white/65">
+                                Realicé un Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM) en Salesianos de
+                                Zaragoza, donde adquirí experiencia práctica en programación, bases de datos y desarrollo de
+                                aplicaciones.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="formacion-item grid items-start gap-10 md:grid-cols-[1fr_auto_1fr]">
+                        <div class="formacion-left text-right opacity-0 translate-x-[-24px]">
+                            <div class="text-sm tracking-[0.35em] text-emerald-200/80">2018–2020</div>
+                            <div class="mt-2 text-xs tracking-[0.35em] text-white/60">Bachillerato Cientifico</div>
+                        </div>
+
+                        <div class="hidden md:flex items-start justify-center pt-1">
+                            <div class="h-2 w-2 rounded-full bg-emerald-400"></div>
+                        </div>
+
+                        <div class="formacion-right opacity-0 translate-x-[24px]">
+                            <h3 class="text-sm tracking-[0.35em] text-emerald-200/90">Bachillerato</h3>
+                            <p class="mt-4 max-w-xl text-sm leading-7 text-white/65">
+                                Estudié el Bachillerato en la rama Científica en el IES Pirámide de Huesca, donde consolidé mi
+                                base en matemáticas, física y ciencias aplicadas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script: revela con scroll y desrevela -->
+        <script is:inline>
+            const items = document.querySelectorAll('.formacion-item');
+            const line = document.querySelector('.formacion-line');
+
+            const io = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((e) => {
+                        e.target.classList.toggle('is-visible', e.isIntersecting);
+                    });
+                },
+                { threshold: 0.25, rootMargin: '0px 0px -20% 0px' }
+            );
+
+            const lineObs = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((e) => {
+                        if (!line) return;
+                        line.classList.toggle('is-visible', e.isIntersecting);
+                    });
+                },
+                {
+                    threshold: 0.1,                 // ⬅ antes 0.2
+                    rootMargin: '0px 0px -10% 0px'   // ⬅ antes -25%
+                }
+            );
+
+            const startObserving = () => {
+                items.forEach((it) => io.observe(it));
+                if (line) lineObs.observe(line);
+            };
+
+            if (window.scrollY > 10) {
+                startObserving();
+            } else {
+                const onFirstScroll = () => {
+                    startObserving();
+                    window.removeEventListener('scroll', onFirstScroll);
+                };
+                window.addEventListener('scroll', onFirstScroll, { passive: true });
+
+                setTimeout(() => {
+                    if (window.scrollY <= 10) return;
+                    startObserving();
+                }, 400);
+            }
+        </script>
+    </section>
+
+    <section id="experiencia" class="py-44">
+        <div class="mx-auto w-full max-w-6xl px-6">
+            <!-- Título -->
+            <div class="mb-16 text-center">
+                <h2 class="exp-title text-3xl tracking-[0.2em] text-emerald-200/80 opacity-0 translate-y-3">
+                    EXPERIENCIA
+                </h2>
+                <div class="exp-line mx-auto mt-6 h-px w-full max-w-3xl bg-white/10 origin-center scale-x-0"></div>
+                <!-- <div class="mx-auto mt-6 h-px w-full max-w-3xl bg-white/10"></div> -->
+            </div>
+
+            <!-- Texto -->
+            <div class="space-y-8 text-center">
+                <p class="exp-text max-w-4xl mx-auto text-white/70 leading-8 opacity-0 translate-y-4">
+                    Tuve la oportunidad de realizar mis prácticas en <span class="text-emerald-300 font-semibold">Nervia Consultoría y Servicios (Zaragoza)</span>,
+                    participando en un proyecto de desarrollo tecnológico para las empresas
+                    <span class="text-emerald-300 font-semibold">Aralogic</span> y
+                    <span class="text-emerald-300 font-semibold">Go Transport</span>.
+                    Durante este periodo, colaboré en la implementación y mejora de soluciones destinadas a optimizar la gestión de flotas y procesos de transporte,
+                    tanto por carretera como por ferrocarril.
+                </p>
+
+                <p class="exp-text exp-text-2 max-w-4xl mx-auto text-white/70 leading-8 opacity-0 translate-y-4">
+                    Esta experiencia me permitió afianzar mis conocimientos en desarrollo de software, comprender el funcionamiento de entornos empresariales reales
+                    y reforzar mi interés por crear soluciones tecnológicas que aporten valor y eficiencia.
+                </p>
+            </div>
+        </div>
+
+        <!-- Script: revela con scroll y desrevela -->
+        <script is:inline>
+            const expSection = document.querySelector('#experiencia');
+            const expTitle = expSection?.querySelector('.exp-title');
+            const expLine  = expSection?.querySelector('.exp-line');
+            const expTexts = expSection?.querySelectorAll('.exp-text');
+
+            if (expSection && expTitle && expLine && expTexts?.length) {
+                let timers = [];
+
+                const clearTimers = () => {
+                    timers.forEach((t) => clearTimeout(t));
+                    timers = [];
+                };
+
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((e) => {
+                        if (e.isIntersecting) {
+                            expTitle.classList.add('is-visible');
+                            expLine.classList.add('is-visible');
+
+                            clearTimers();
+                            expTexts.forEach((t, i) => {
+                                timers.push(setTimeout(() => t.classList.add('is-visible'), 260 + i * 220));
+                            });
+                        } else {
+                            clearTimers();
+                            expTitle.classList.remove('is-visible');
+                            expLine.classList.remove('is-visible');
+                            expTexts.forEach((t) => t.classList.remove('is-visible'));
+                        }
+                    });
+                }, { threshold: 0.35, rootMargin: '0px 0px -25% 0px' });
+
+                io.observe(expSection);
+            }
+        </script>
+    </section>
+
+    <section id="projects" class="relative min-h-screen pt-40 pb-32">
+        <div class="mx-auto w-full max-w-[96rem] px-8">
+            <!-- Título sección Proyectos -->
+            <div class="mb-24 flex items-center justify-center gap-3 text-center">
+                <h2 class="text-3xl tracking-[0.2em] text-emerald-200/80">
+                    PROYECTOS
+                </h2>
+            </div>
+            <!-- Bloque principal -->
+            <div class="space-y-40">
+                <div class="grid items-center gap-128 lg:grid-cols-2">
+                    <!-- Izquierda: imagen -->
+                    <div class="flex justify-center lg:justify-start">
+                        <div class="relative">
+                            <div class="pointer-events-none absolute -inset-10 rounded-3xl bg-[#0b1a14]/70 blur-[80px]"></div>
+                            <div class="relative overflow-hidden rounded-[15px] w-[700px] h-[398px] max-w-full
+                            shadow-[0_60px_123px_-25px_hsla(225,2%,62%,.42),_0_35px_75px_-35px_hsla(225,2%,62%,.08)]
+                            [transform:perspective(800px)_rotateY(25deg)_scale(.8)_rotateX(10deg)] transition-all duration-[600ms]
+                            ease-in-out hover:[transform:perspective(800px)_translateY(-14px)_rotateY(-12deg)_scale(1)_rotateX(0deg)]">
+                                <img src="/imagenes/ProyectoChinchilla.png" alt="Proyecto 1" class="aspect-[16/10] w-full object-cover"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Derecha: info -->
+                    <div class="space-y-8">
+                        <!-- Título  -->
+                        <h3 class="inline-block rounded-md border border-emerald-400/60 px-5 py-2 text-xl font-bold text-emerald-300">
+                            CHINCHIGOTCHI
+                        </h3>
+
+                        <!-- Texto -->
+                        <div class="max-w-2xl space-y-5 text-white/75 leading-relaxed">
+                            <p>
+                                <span class="text-emerald-300 font-semibold">Chinchigotchi</span> es un juego de mascota virtual desarrollado
+                                en <span class="text-emerald-300/90">Godot</span>, donde el jugador cuida al personaje y obtiene monedas a través
+                                de distintos <span class="text-emerald-300/90">minijuegos</span>.
+                            </p>
+
+                            <p>
+                                El proyecto incluye un <span class="text-emerald-300/90">backend ligero</span> para gestionar el progreso de
+                                los usuarios y una <span class="text-emerald-300/90">aplicación móvil complementaria</span> que permite ganar
+                                monedas caminando en la vida real, conectando el juego con hábitos activos.
+                            </p>
+
+                            <p class="text-white/65">
+                                Todo el apartado visual ha sido diseñado y desarrollado a mano, incluyendo la mascota,
+                                los elementos interactivos y los minijuegos.
+                            </p>
+                        </div>
+
+                        <!-- Iconos -->
+                        <div class="pt-4">
+                            <span
+                                    aria-label="Tecnología: Godot"
+                                    class="inline-flex items-center justify-center rounded-xl border
+                                    border-emerald-400/30 bg-emerald-500/10 p-3 text-emerald-300 transition
+                                    hover:bg-emerald-500/20 hover:scale-105 select-none cursor-default" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128"><path fill="#fff" d="M114.906 84.145s-.172-1.04-.27-1.028l-18.823 1.817a3.06 3.06 0 0 0-2.77 2.84l-.516 7.413l-14.566 1.04l-.988-6.72a3.09 3.09 0 0 0-3.04-2.62H54.067a3.09 3.09 0 0 0-3.039 2.62l-.988 6.72l-14.566-1.04l-.516-7.414a3.06 3.06 0 0 0-2.77-2.84l-18.835-1.816c-.094-.012-.168 1.028-.266 1.028l-.024 4.074l15.954 2.574l.52 7.477a3.084 3.084 0 0 0 2.843 2.847l20.059 1.434q.116.007.226.008a3.09 3.09 0 0 0 3.031-2.621l1.02-6.915h14.57l1.02 6.915a3.09 3.09 0 0 0 3.254 2.613l20.062-1.434a3.084 3.084 0 0 0 2.844-2.847l.52-7.477l15.945-2.586zm0 0"/><path fill="#478cbf" d="M13.086 53.422v30.723q.087 0 .168.007L32.09 85.97a2.03 2.03 0 0 1 1.828 1.875l.582 8.316l16.426 1.172l1.133-7.672a2.03 2.03 0 0 1 2.007-1.734h19.868a2.03 2.03 0 0 1 2.007 1.734l1.133 7.672l16.43-1.172l.578-8.316a2.03 2.03 0 0 1 1.828-1.875l18.828-1.817q.082-.007.168-.007V81.69h.008V53.42c2.652-3.335 5.16-7.019 7.086-10.116c-2.941-5.008-6.543-9.48-10.395-13.625a102 102 0 0 0-10.316 6.004c-1.64-1.633-3.484-2.965-5.3-4.36c-1.782-1.43-3.79-2.48-5.696-3.703c.566-4.223.848-8.379.96-12.719c-4.913-2.476-10.155-4.113-15.456-5.293c-2.117 3.559-4.055 7.41-5.738 11.176c-2-.332-4.008-.457-6.02-.48V20.3l-.039.004c-.016.002-.023-.004-.04-.004v.004c-2.01.023-4.019.148-6.019.48c-1.683-3.765-3.62-7.617-5.738-11.176c-5.3 1.18-10.543 2.817-15.457 5.293c.113 4.34.395 8.496.961 12.72c-1.906 1.222-3.914 2.273-5.695 3.702c-1.813 1.395-3.66 2.727-5.301 4.36a102 102 0 0 0-10.316-6.004C12.543 33.824 8.94 38.297 6 43.305c2.313 3.629 4.793 7.273 7.086 10.117m0 0"/><path fill="#478cbf" d="m98.008 89.84l-.582 8.36a2.024 2.024 0 0 1-1.88 1.878l-20.062 1.434c-.046.004-.097.004-.144.004c-.996 0-1.86-.73-2.004-1.73l-1.152-7.806H55.816l-1.152 7.805a2.026 2.026 0 0 1-2.148 1.727l-20.063-1.434a2.024 2.024 0 0 1-1.879-1.879l-.582-8.36l-16.937-1.632c.008 1.82.03 3.816.03 4.211c0 17.887 22.692 26.484 50.88 26.582h.07c28.188-.098 50.871-8.695 50.871-26.582c0-.402.024-2.39.031-4.211zm0 0"/><path fill="#fff" d="M48.652 65.895c0 6.27-5.082 11.351-11.351 11.351c-6.266 0-11.348-5.082-11.348-11.351c0-6.266 5.082-11.344 11.348-11.344c6.27 0 11.351 5.078 11.351 11.344"/><path fill="#414042" d="M45.922 66.566a7.53 7.53 0 0 1-7.535 7.532a7.534 7.534 0 0 1-7.535-7.532a7.534 7.534 0 0 1 7.535-7.53a7.53 7.53 0 0 1 7.535 7.53"/><path fill="#fff" d="M64 78.277c-2.02 0-3.652-1.488-3.652-3.32v-10.45c0-1.831 1.632-3.32 3.652-3.32c2.016 0 3.656 1.489 3.656 3.32v10.45c0 1.832-1.64 3.32-3.656 3.32m15.348-12.382c0 6.27 5.082 11.351 11.351 11.351c6.266 0 11.348-5.082 11.348-11.351c0-6.266-5.082-11.344-11.348-11.344c-6.27 0-11.351 5.078-11.351 11.344"/><path fill="#414042" d="M82.078 66.566a7.53 7.53 0 0 0 7.531 7.532a7.531 7.531 0 1 0 0-15.063a7.53 7.53 0 0 0-7.53 7.531"/></svg>
+                            </span>
+                            <span
+                                    aria-label="Tecnología: Godot"
+                                    class="inline-flex items-center justify-center rounded-xl border
+                                    border-emerald-400/30 bg-emerald-500/10 p-3 text-emerald-300 transition
+                                    hover:bg-emerald-500/20 hover:scale-105 select-none cursor-default" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#0288d1" d="M9.86 2A2.86 2.86 0 0 0 7 4.86v1.68h4.29c.39 0 .71.57.71.96H4.86A2.86 2.86 0 0 0 2 10.36v3.781a2.86 2.86 0 0 0 2.86 2.86h1.18v-2.68a2.85 2.85 0 0 1 2.85-2.86h5.25c1.58 0 2.86-1.271 2.86-2.851V4.86A2.86 2.86 0 0 0 14.14 2zm-.72 1.61c.4 0 .72.12.72.71s-.32.891-.72.891c-.39 0-.71-.3-.71-.89s.32-.711.71-.711"/><path fill="#fdd835" d="M17.959 7v2.68a2.85 2.85 0 0 1-2.85 2.859H9.86A2.85 2.85 0 0 0 7 15.389v3.75a2.86 2.86 0 0 0 2.86 2.86h4.28A2.86 2.86 0 0 0 17 19.14v-1.68h-4.291c-.39 0-.709-.57-.709-.96h7.14A2.86 2.86 0 0 0 22 13.64V9.86A2.86 2.86 0 0 0 19.14 7zM8.32 11.513l-.004.004l.038-.004zm6.54 7.276c.39 0 .71.3.71.89a.71.71 0 0 1-.71.71c-.4 0-.72-.12-.72-.71s.32-.89.72-.89"/></svg>
+                            </span>
+                            <span
+                                    aria-label="Tecnología: Godot"
+                                    class="inline-flex items-center justify-center rounded-xl border
+                                    border-emerald-400/30 bg-emerald-500/10 p-3 text-emerald-300 transition
+                                    hover:bg-emerald-500/20 hover:scale-105 select-none cursor-default" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128"><defs><linearGradient id="IconifyId19b98e4ab08f1eb485" x1="-15.615" x2="-6.741" y1="-9.108" y2="-9.108" gradientTransform="rotate(90 -90.486 64.634)scale(9.2712)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#95d7f4"/><stop offset=".92" stop-color="#0f7fcc"/><stop offset="1" stop-color="#0f7fcc"/></linearGradient></defs><path fill="#0b7fcc" d="M69.5 99.176c-.059-.73-.094-1.2-.094-1.2S67.2 83.087 64.57 78.642c-.414-.707.043-3.594 1.207-7.88c.68 1.169 3.54 6.192 4.118 7.81c.648 1.824.78 2.347.78 2.347s-1.57-8.082-4.144-12.797a162 162 0 0 1 2.004-6.265c.973 1.71 3.313 5.859 3.828 7.3c.102.293.192.543.27.774l.074-.414c-.59-2.504-1.75-6.86-3.336-10.082c3.52-18.328 15.531-42.824 27.84-53.754H16.9c-5.387 0-9.789 4.406-9.789 9.789v88.57c0 5.383 4.406 9.789 9.79 9.789h52.897a119 119 0 0 1-.297-14.652"/><path fill="url(#IconifyId19b98e4ab08f1eb485)" d="M65.777 70.762c.68 1.168 3.54 6.188 4.117 7.809c.649 1.824.781 2.347.781 2.347s-1.57-8.082-4.144-12.797a165 165 0 0 1 2.004-6.27c.887 1.567 2.922 5.169 3.652 6.872l.082-.961c-.648-2.496-1.633-5.766-2.898-8.328c3.242-16.871 13.68-38.97 24.926-50.898H16.899a6.94 6.94 0 0 0-6.934 6.933v82.11c17.527-6.731 38.664-12.88 56.855-12.614c-.672-2.605-1.441-4.96-2.25-6.324c-.414-.707.043-3.597 1.207-7.879"/><path fill="#003956" d="M115.95 2.781c-5.5-4.906-12.164-2.933-18.734 2.899a44 44 0 0 0-2.914 2.859c-11.25 11.926-21.684 34.023-24.926 50.895c1.262 2.563 2.25 5.832 2.894 8.328c.168.64.32 1.242.442 1.754c.285 1.207.437 1.996.437 1.996s-.101-.383-.515-1.582c-.078-.23-.168-.484-.27-.773a8 8 0 0 0-.172-.434c-.734-1.703-2.765-5.305-3.656-6.867c-.762 2.25-1.437 4.36-2.004 6.265c2.578 4.715 4.149 12.797 4.149 12.797s-.137-.523-.782-2.347c-.578-1.621-3.441-6.64-4.117-7.809c-1.164 4.281-1.625 7.172-1.207 7.88c.809 1.362 1.574 3.722 2.25 6.323c1.524 5.867 2.586 13.012 2.586 13.012s.031.469.094 1.2a119 119 0 0 0 .297 14.651c.504 6.11 1.453 11.363 2.664 14.172l.828-.449c-1.781-5.535-2.504-12.793-2.188-21.156c.48-12.793 3.422-28.215 8.856-44.289c9.191-24.27 21.938-43.738 33.602-53.035c-10.633 9.602-25.023 40.684-29.332 52.195c-4.82 12.891-8.238 24.984-10.301 36.574c3.55-10.863 15.047-15.53 15.047-15.53s5.637-6.958 12.227-16.888c-3.95.903-10.43 2.442-12.598 3.352c-3.2 1.344-4.067 1.8-4.067 1.8s10.371-6.312 19.27-9.171c12.234-19.27 25.562-46.648 12.141-58.621"/></svg>
+                            </span>
+                            <span
+                                    aria-label="Tecnología: Godot"
+                                    class="inline-flex items-center justify-center rounded-xl border
+                                    border-emerald-400/30 bg-emerald-500/10 p-3 text-emerald-300 transition
+                                    hover:bg-emerald-500/20 hover:scale-105 select-none cursor-default" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128"><path fill="#61dafb" d="M37.965 6.934c-2.12.072-4.14.588-5.965 1.64c-3.648 2.106-5.826 5.97-6.805 10.543c-.978 4.574-.875 10.013.1 16.1c.376 2.347.926 4.815 1.562 7.338c-2.503.71-4.916 1.47-7.136 2.318c-5.76 2.2-10.52 4.83-13.992 7.965S0 59.788 0 64s2.256 8.03 5.729 11.164C9.2 78.3 13.96 80.93 19.72 83.13c2.22.848 4.633 1.606 7.136 2.317c-.636 2.523-1.186 4.991-1.562 7.337c-.975 6.09-1.076 11.527-.098 16.1c.98 4.575 3.155 8.438 6.803 10.544s8.08 2.06 12.531.62c4.45-1.44 9.11-4.247 13.895-8.136c1.844-1.498 3.707-3.206 5.575-5.02c1.866 1.814 3.73 3.522 5.574 5.02c4.784 3.89 9.442 6.697 13.893 8.137c4.45 1.44 8.885 1.485 12.533-.62c3.648-2.107 5.826-5.97 6.805-10.544c.978-4.574.873-10.012-.102-16.1c-.376-2.347-.924-4.815-1.56-7.338c2.503-.71 4.916-1.47 7.136-2.317c5.76-2.199 10.52-4.83 13.992-7.965S128 68.212 128 64s-2.256-8.028-5.729-11.162c-3.472-3.134-8.232-5.766-13.992-7.965c-2.22-.847-4.631-1.608-7.134-2.318c.636-2.523 1.184-4.992 1.56-7.338c.975-6.087 1.076-11.526.098-16.1S99.649 10.68 96 8.574s-8.08-2.06-12.531-.62c-4.45 1.44-9.11 4.248-13.895 8.136c-1.844 1.5-3.71 3.208-5.577 5.022c-1.867-1.813-3.73-3.523-5.574-5.022c-4.783-3.888-9.439-6.698-13.889-8.138c-2.226-.72-4.448-1.09-6.57-1.02zm.256 5.545c1.33-.038 2.854.207 4.6.77c3.49 1.13 7.675 3.57 12.093 7.16c1.702 1.382 3.443 2.982 5.197 4.69c-3.664 3.96-7.298 8.463-10.814 13.434c-6.063.56-11.78 1.456-17.043 2.65c-.6-2.374-1.116-4.68-1.463-6.847c-.9-5.62-.92-10.465-.152-14.053c.767-3.587 2.202-5.767 4.144-6.888c.971-.56 2.108-.88 3.438-.916m51.559 0c1.33.037 2.467.355 3.438.916c1.942 1.12 3.377 3.3 4.144 6.887s.75 8.433-.15 14.054c-.347 2.165-.862 4.474-1.463 6.846c-5.262-1.193-10.98-2.09-17.045-2.649c-3.516-4.97-7.152-9.474-10.816-13.435c1.754-1.707 3.497-3.308 5.199-4.69c4.418-3.592 8.603-6.028 12.094-7.158c1.745-.564 3.27-.808 4.6-.77zM64 29.102a124 124 0 0 1 7.44 8.926c-2.444-.11-4.917-.184-7.44-.184c-2.522 0-4.995.073-7.44.184A123 123 0 0 1 64 29.102m0 14.308c3.985 0 7.87.157 11.634.44a155 155 0 0 1 6.199 9.853A155 155 0 0 1 87.267 64a155 155 0 0 1-5.434 10.295a155 155 0 0 1-6.2 9.856c-3.763.283-7.648.441-11.632.441a155 155 0 0 1-11.638-.44a155 155 0 0 1-6.197-9.857a155 155 0 0 1-5.434-10.293a155 155 0 0 1 5.436-10.297a155 155 0 0 1 6.2-9.855a155 155 0 0 1 11.633-.44zm-18.773 1.163a164 164 0 0 0-3.88 6.35a164 164 0 0 0-3.56 6.534a124 124 0 0 1-4.012-10.906c3.59-.8 7.412-1.47 11.452-1.978m37.547 0a124 124 0 0 1 11.452 1.978a124 124 0 0 1-4.012 10.908a164 164 0 0 0-3.56-6.537a164 164 0 0 0-3.88-6.35zm-54.409 3.341c1.598 5.154 3.681 10.554 6.23 16.084c-2.55 5.532-4.63 10.934-6.23 16.088c-2.355-.665-4.61-1.374-6.66-2.156c-5.319-2.03-9.524-4.438-12.248-6.898c-2.723-2.458-3.893-4.79-3.893-7.033c0-2.242 1.17-4.572 3.893-7.03c2.724-2.46 6.93-4.867 12.248-6.897c2.05-.783 4.305-1.493 6.66-2.159zm71.27 0c2.356.666 4.612 1.376 6.66 2.16c5.32 2.03 9.525 4.436 12.249 6.895c2.723 2.46 3.893 4.79 3.893 7.031c0 2.243-1.17 4.575-3.893 7.033c-2.724 2.46-6.93 4.866-12.248 6.897c-2.05.782-4.307 1.49-6.662 2.156c-1.598-5.153-3.68-10.553-6.227-16.084c2.549-5.532 4.63-10.933 6.229-16.088zM64 52.592A11.41 11.41 0 0 0 52.592 64a11.41 11.41 0 0 0 11.409 11.408A11.41 11.41 0 0 0 75.409 64A11.41 11.41 0 0 0 64 52.592m26.214 17.951a124 124 0 0 1 4.01 10.908c-3.588.8-7.41 1.471-11.448 1.98a164 164 0 0 0 3.877-6.353a164 164 0 0 0 3.56-6.535zm-52.427.002a164 164 0 0 0 3.56 6.533a166 166 0 0 0 3.88 6.352a123 123 0 0 1-11.452-1.979a124 124 0 0 1 4.012-10.906M32.252 86.82c5.262 1.192 10.98 2.087 17.045 2.646c3.516 4.973 7.152 9.477 10.816 13.44c-1.754 1.705-3.495 3.305-5.197 4.69c-4.418 3.59-8.607 6.03-12.098 7.16c-3.49 1.128-6.095.973-8.037-.148c-1.942-1.122-3.375-3.3-4.142-6.887c-.768-3.588-.749-8.433.152-14.056c.347-2.165.86-4.473 1.461-6.845m63.495 0c.6 2.372 1.116 4.68 1.463 6.845c.9 5.623.92 10.468.152 14.056c-.767 3.588-2.202 5.767-4.144 6.89c-1.942 1.12-4.546 1.273-8.037.143s-7.676-3.57-12.094-7.16c-1.701-1.383-3.444-2.983-5.197-4.69c3.664-3.96 7.298-8.466 10.814-13.438c6.063-.559 11.78-1.454 17.043-2.646M56.56 89.972a164 164 0 0 0 7.441.186a164 164 0 0 0 7.442-.186a123 123 0 0 1-7.442 8.93a123 123 0 0 1-7.44-8.93z"/></svg>
+                            </span>
+                            <span
+                                    aria-label="Tecnología: Godot"
+                                    class="inline-flex items-center justify-center rounded-xl border
+                                    border-emerald-400/30 bg-emerald-500/10 p-3 text-emerald-300 transition
+                                    hover:bg-emerald-500/20 hover:scale-105 select-none cursor-default" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32"><path fill="#6d6a76" d="M4.8 2h22.4v28H4.8M2.93 3.87h26.14v24.26H2.93"/><path fill="#655561" d="M6.67 2h18.66v28H6.67M4.8 3.87h22.4v24.26H4.8M2.93 5.73h26.14v20.54H2.93"/><path fill="#7d929e" d="M6.67 3.87h18.66v24.26H6.67M4.8 5.73h22.4v20.54H4.8z"/><path fill="#fff" d="M6.67 3.87h18.66V24.4H6.67M4.8 5.73h22.4v16.8H4.8z"/><path fill="#655561" d="M10.4 9.47h1.87v7.46H10.4zm9.33 0h1.87v7.46h-1.87z"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid items-center gap-24 lg:grid-cols-2">
+                    <!-- Video -->
+                    <div class="flex justify-center lg:justify-end lg:order-2">
+                        <div class="relative">
+                            <div class="pointer-events-none absolute -inset-10 rounded-3xl bg-[#0b1a14]/70 blur-[80px]"></div>
+                            <div class="relative overflow-hidden rounded-[15px] w-[700px] h-[398px] max-w-full shadow-[0_60px_123px_-25px_hsla(225,2%,62%,.42),_0_35px_75px_-35px_hsla(225,2%,62%,.08)] [transform:perspective(800px)_rotateY(-25deg)_scale(.8)_rotateX(10deg)] transition-all duration-[600ms] ease-in-out hover:[transform:perspective(800px)_translateY(-14px)_rotateY(12deg)_scale(1)_rotateX(0deg)]">
+
+                                <!-- ✅ Botón play/pause (zona roja) -->
+                                <button
+                                        type="button"
+                                        class="video-toggle absolute left-5 top-5 z-10 inline-flex items-center gap-2 rounded-xl border border-emerald-400/30 bg-[#0b0b0b]/55 px-3 py-2 text-xs tracking-[0.25em] text-emerald-200/90 backdrop-blur hover:bg-[#0b0b0b]/70 transition"
+                                        aria-label="Pausar o reanudar vídeo"
+                                        data-state="playing"
+                                >
+                                    <span class="video-toggle-icon">⏸</span>
+                                    <span class="hidden sm:inline">PAUSE</span>
+                                </button>
+
+                                <video
+                                        class="h-full w-full object-cover"
+                                        muted
+                                        playsinline
+                                        preload="none"
+                                        loop
+                                        poster="/imagenes/Proyecto2.png"
+                                        data-autoplay
+                                >
+                                    <source src="/videos/ESInanimodelucro.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Texto -->
+                    <div class="space-y-6 lg:order-1">
+                        <h3 class="inline-block rounded-md border border-emerald-400/60 px-5 py-2 text-xl font-bold text-emerald-300">
+                            ASOCIACION IKER
+                        </h3>
+                        <div class="max-w-2xl space-y-4 text-white/75 leading-relaxed">
+                            <p class="text-white/85">
+                                Desarrollo completo desde cero de la web de la
+                                <span class="text-emerald-300 font-semibold">Asociación Iker</span>,
+                                enfocada en la investigación del <span class="text-emerald-300 font-semibold">Liposarcoma Mixoide</span>
+                                y el apoyo a <span class="text-emerald-300 font-semibold">Cuidados Paliativos</span>.
+                            </p>
+
+                            <p class="text-white/70">
+                                La solución está construida en <span class="text-emerald-300 font-semibold">WordPress</span>,
+                                integrando plugins y una estructura pensada para que la propia asociación pueda
+                                <span class="text-emerald-200/90">gestionar y actualizar contenidos</span> de forma sencilla,
+                                sin depender de conocimientos técnicos.
+                            </p>
+
+                            <p class="text-white/70">
+                                Priorizando accesibilidad, claridad y una experiencia de navegación limpia para usuarios y familias.
+                            </p>
+                        </div>
+                        <!-- Iconos -->
+                        <div class="pt-4">
+                            <span
+                                    aria-label="Tecnología: Godot"
+                                    class="inline-flex items-center justify-center rounded-xl border
+                                    border-emerald-400/30 bg-emerald-500/10 p-3 text-emerald-300 transition
+                                    hover:bg-emerald-500/20 hover:scale-105 select-none cursor-default" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#5ae8b2" d="M3.42 12c0-1.24.27-2.42.74-3.5l4.1 11.22A8.56 8.56 0 0 1 3.42 12m14.37-.43c0 .73-.29 1.58-.65 2.77l-.86 2.86l-3.1-9.2l.98-.1c.47-.06.41-.74-.05-.71c0 0-1.39.11-2.29.11l-2.26-.11c-.46-.03-.51.68-.06.71l.91.1l1.34 3.64l-1.88 5.63L6.74 8l.99-.1c.46-.06.4-.74-.06-.71c0 0-1.39.11-2.29.11l-.55-.01C6.37 4.96 9 3.42 12 3.42c2.23 0 4.27.86 5.79 2.25h-.11c-.84 0-1.44.73-1.44 1.52c0 .71.41 1.31.84 2.01c.33.57.71 1.3.71 2.37m-5.64 1.18l2.64 7.22l.06.12c-.89.32-1.85.49-2.85.49c-.84 0-1.65-.12-2.42-.35zm7.38-4.87A8.55 8.55 0 0 1 20.58 12c0 3.16-1.72 5.93-4.27 7.41l2.62-7.57c.49-1.22.66-2.2.66-3.07zM12 2a10 10 0 0 1 10 10a10 10 0 0 1-10 10A10 10 0 0 1 2 12A10 10 0 0 1 12 2m0 19.54c5.26 0 9.54-4.28 9.54-9.54S17.26 2.46 12 2.46S2.46 6.74 2.46 12s4.28 9.54 9.54 9.54"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script is:inline>
+            const videos = document.querySelectorAll('video[data-autoplay]');
+
+            if (videos.length) {
+                videos.forEach((video) => {
+                    if (!(video instanceof HTMLVideoElement)) return;
+
+                    const container = video.closest('.relative.overflow-hidden');
+                    const btn = container?.querySelector('.video-toggle');
+
+                    let userPaused = false;
+
+                    const setBtnState = (playing) => {
+                        if (!btn) return;
+                        btn.dataset.state = playing ? 'playing' : 'paused';
+
+                        const icon = btn.querySelector('.video-toggle-icon');
+                        const label = btn.querySelector('span.hidden.sm\\:inline');
+
+                        if (icon) icon.textContent = playing ? '⏸' : '▶';
+                        if (label) label.textContent = playing ? 'PAUSE' : 'PLAY';
+                    };
+
+                    // Click manual del usuario
+                    if (btn) {
+                        btn.addEventListener('click', async () => {
+                            if (video.paused) {
+                                userPaused = false;
+                                try {
+                                    await video.play();
+                                    setBtnState(true);
+                                } catch {}
+                            } else {
+                                userPaused = true;
+                                video.pause();
+                                setBtnState(false);
+                            }
+                        });
+                    }
+
+                    // IntersectionObserver (tu lógica + respeto a pausa manual)
+                    const io = new IntersectionObserver(
+                        (entries) => {
+                            entries.forEach(async (entry) => {
+                                if (!entry.isIntersecting) {
+                                    video.pause();
+                                    video.currentTime = 0; // vuelve al inicio al salir
+                                    setBtnState(false);
+                                    return;
+                                }
+
+                                if (userPaused) {
+                                    setBtnState(false);
+                                    return;
+                                }
+
+                                try {
+                                    if (video.preload === 'none') video.preload = 'metadata';
+                                    await video.play();
+                                    setBtnState(true);
+                                } catch {
+                                    setBtnState(false);
+                                }
+                            });
+                        },
+                        {
+                            threshold: 0.35,
+                            rootMargin: '0px 0px -15% 0px'
+                        }
+                    );
+
+                    io.observe(video);
+                });
+            }
+        </script>
+    </section>
+
+    <!-- CONTACTO (FOOTER) -->
+    <footer
+            id="contact"
+            class="relative mt-24 border-t border-white/10 bg-[#0b0b0b] pt-16 pb-10"
+    >
+        <!-- glow suave -->
+        <div class="pointer-events-none absolute -left-40 -bottom-40 h-[520px] w-[520px] rounded-full bg-emerald-500/10 blur-[120px]"></div>
+
+        <div class="mx-auto w-full max-w-6xl px-6">
+            <!-- Título -->
+            <div class="mb-10 text-center">
+                <h2 class="text-3xl tracking-[0.2em] text-emerald-200/80">CONTACTO</h2>
+                <div class="mx-auto mt-6 h-px w-full max-w-3xl bg-white/10"></div>
+            </div>
+
+            <!-- Bloque contacto -->
+            <div class="mx-auto max-w-2xl rounded-2xl border border-white/10 bg-white/[0.02] p-8 shadow-[0_0_60px_rgba(16,185,129,0.08)]">
+                <h3 class="text-sm tracking-[0.35em] text-white/70">INFORMACIÓN DEL CONTACTO</h3>
+                <div class="mt-8 space-y-6">
+                    <!-- Teléfono -->
+                    <div class="flex items-start gap-4">
+                        <!-- icono principal (teléfono) -->
+                        <span class="mt-2 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-400/25 bg-emerald-500/10 text-emerald-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="none" stroke="#5ae8b2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.6 14.522c-2.395 2.52-8.504-3.534-6.1-6.064c1.468-1.545-.19-3.31-1.108-4.609c-1.723-2.435-5.504.927-5.39 3.066c.363 6.746 7.66 14.74 14.726 14.042c2.21-.218 4.75-4.21 2.215-5.669c-1.268-.73-3.009-2.17-4.343-.767"/></svg>
+                        </span>
+
+                        <div class="flex items-center gap-3">
+                            <div>
+                                <p class="text-sm font-semibold text-white/80">Teléfono</p>
+                                <span class="copy-value text-sm text-emerald-300">
+                                    +34 646871462
+                                </span>
+                            </div>
+
+                            <!-- ICONO COPIAR -->
+                            <button
+                                    type="button"
+                                    class="copy-btn mt-4 ml-26 inline-flex items-center justify-center p-2 rounded-md opacity-60 hover:opacity-100 transition relative"
+                                    data-copy="+34 646871462"
+                                    aria-label="Copiar email"
+                            >
+                                <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path fill="#5ae8b2" d="M21 8.94a1.3 1.3 0 0 0-.06-.27v-.09a1 1 0 0 0-.19-.28l-6-6a1 1 0 0 0-.28-.19a.3.3 0 0 0-.09 0a.9.9 0 0 0-.33-.11H10a3 3 0 0 0-3 3v1H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-1h1a3 3 0 0 0 3-3zm-6-3.53L17.59 8H16a1 1 0 0 1-1-1ZM15 19a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h1v7a3 3 0 0 0 3 3h5Zm4-4a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3v3a3 3 0 0 0 3 3h3Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="flex items-start gap-4">
+                        <!-- icono principal (email) -->
+                        <span class="mt-2 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-400/25 bg-emerald-500/10 text-emerald-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#5ae8b2" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"/></svg>
+                        </span>
+
+                        <div class="flex items-center gap-3">
+                            <div>
+                                <p class="text-sm font-semibold text-white/80">Gmail</p>
+                                <span class="copy-value text-sm text-emerald-300">
+                                    javimorenocuenca@gmail.com
+                                </span>
+                            </div>
+
+                            <!-- ICONO COPIAR -->
+                            <button
+                                    type="button"
+                                    class="copy-btn mt-4 ml-3 inline-flex items-center justify-center p-2 rounded-md opacity-60 hover:opacity-100 transition relative"
+                                    data-copy="javimorenocuenca@gmail.com"
+                                    aria-label="Copiar email"
+                            >
+                                <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path fill="#5ae8b2" d="M21 8.94a1.3 1.3 0 0 0-.06-.27v-.09a1 1 0 0 0-.19-.28l-6-6a1 1 0 0 0-.28-.19a.3.3 0 0 0-.09 0a.9.9 0 0 0-.33-.11H10a3 3 0 0 0-3 3v1H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-1h1a3 3 0 0 0 3-3zm-6-3.53L17.59 8H16a1 1 0 0 1-1-1ZM15 19a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h1v7a3 3 0 0 0 3 3h5Zm4-4a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3v3a3 3 0 0 0 3 3h3Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Links redes sociales -->
+                    <div class="flex items-start gap-4">
+                        <!-- Linkedin -->
+                        <a
+                                href="https://www.linkedin.com/in/javiermorenogarc%C3%ADa/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn Javier Moreno"
+                                class="inline-flex"
+                        >
+                            <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-emerald-400/20 text-emerald-300 transition hover:border-emerald-400/50 hover:shadow-[0_0_14px_rgba(16,185,129,0.18)] hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><circle cx="4" cy="4" r="2" fill="#5ae8b2" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" dur="0.15s" values="0;1"/></circle><g fill="none" stroke="#5ae8b2" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path stroke-dasharray="12" stroke-dashoffset="12" d="M4 10v10"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.15s" dur="0.2s" values="12;0"/></path><path stroke-dasharray="12" stroke-dashoffset="12" d="M10 10v10"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.45s" dur="0.2s" values="12;0"/></path><path stroke-dasharray="24" stroke-dashoffset="24" d="M10 15c0 -2.76 2.24 -5 5 -5c2.76 0 5 2.24 5 5v5"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.65s" dur="0.2s" values="24;0"/></path></g></svg>
+                            </span>
+                        </a>
+                        <!-- Github -->
+                        <a
+                                href="https://github.com/JaviMG2709"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn Javier Moreno"
+                                class="inline-flex"
+                        >
+                            <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-emerald-400/20 text-emerald-300 transition hover:border-emerald-400/50 hover:shadow-[0_0_14px_rgba(16,185,129,0.18)]hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="#5ae8b2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="32" stroke-dashoffset="32" d="M12 4c1.67 0 2.61 0.4 3 0.5c0.53 -0.43 1.94 -1.5 3.5 -1.5c0.34 1 0.29 2.22 0 3c0.75 1 1 2 1 3.5c0 2.19 -0.48 3.58 -1.5 4.5c-1.02 0.92 -2.11 1.37 -3.5 1.5c0.65 0.54 0.5 1.87 0.5 2.5c0 0.73 0 3 0 3M12 4c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5c0 0.73 0 3 0 3"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.7s" values="32;0"/></path><path stroke-dasharray="10" stroke-dashoffset="10" d="M9 19c-1.41 0 -2.84 -0.56 -3.69 -1.19c-0.84 -0.63 -1.09 -1.66 -2.31 -2.31"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.8s" dur="0.2s" values="10;0"/></path></g></svg>
+                            </span>
+                        </a>
+                        <!-- Instagram -->
+                        <a
+                                href="https://www.instagram.com/javichu2709/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn Javier Moreno"
+                                class="inline-flex"
+                        >
+                            <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-emerald-400/40 text-emerald-300 transition hover:border-emerald-400 hover:shadow-[0_0_18px_rgba(16,185,129,0.25)] hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><circle cx="17" cy="7" r="1.5" fill="#5ae8b2" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="1.3s" dur="0.15s" values="0;1"/></circle><g fill="none" stroke="#5ae8b2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="72" stroke-dashoffset="72" d="M16 3c2.76 0 5 2.24 5 5v8c0 2.76 -2.24 5 -5 5h-8c-2.76 0 -5 -2.24 -5 -5v-8c0 -2.76 2.24 -5 5 -5h4Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.6s" values="72;0"/></path><path stroke-dasharray="28" stroke-dashoffset="28" d="M12 8c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.7s" dur="0.6s" values="28;0"/></path></g></svg>
+                            </span>
+                        </a>
+                        <!-- Curriculum -->
+                        <a
+                                href="/cv/JavierMorenoGarciaCV.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn Javier Moreno"
+                                class="inline-flex"
+                        >
+                            <span class="mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full border border-emerald-400/40 text-emerald-300 transition hover:border-emerald-400 hover:shadow-[0_0_18px_rgba(16,185,129,0.25)] hover:scale-105">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><g fill="#5ae8b2"><path d="M7.8 6.35c.56 0 1.01-.45 1.01-1.01S8.36 4.33 7.8 4.33s-1.01.45-1.01 1.01s.45 1.01 1.01 1.01"/><path fill-rule="evenodd" d="M9.83 8.55c0-1.08-.91-1.86-2.03-1.86s-2.03.78-2.03 1.86v.51c0 .09.04.18.1.24s.15.1.24.1h3.38c.09 0 .18-.04.24-.1s.1-.15.1-.24zM5.75 11.5a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75m0 3a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75" clip-rule="evenodd"/><path fill-rule="evenodd" d="M2.5 2.5c0-1.102.898-2 2-2h6.69c.562 0 1.092.238 1.465.631l.006.007l4.312 4.702c.359.383.527.884.527 1.36v10.3c0 1.102-.898 2-2 2h-11c-1.102 0-2-.898-2-2zm8.689 0H4.5v15h11V7.192l-4.296-4.685l-.003-.001z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M11.19.5a1 1 0 0 1 1 1v4.7h4.31a1 1 0 1 1 0 2h-5.31a1 1 0 0 1-1-1V1.5a1 1 0 0 1 1-1" clip-rule="evenodd"/></g></svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Línea final -->
+            <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-center md:flex-row">
+                <p class="text-xs tracking-[0.25em] text-white/45">
+                    © <span id="year"></span> Javier Moreno Garcia — Todos los derechos reservados
+                </p>
+
+                <p class="text-xs text-white/35">
+                    Construido con Astro + Tailwind
+                </p>
+            </div>
+        </div>
+
+        <script is:inline>
+            // Copy buttons + feedback
+            document.querySelectorAll('.copy-btn').forEach((btn) => {
+                btn.addEventListener('click', async () => {
+                    const value = btn.getAttribute('data-copy');
+                    if (!value) return;
+
+                    try {
+                        await navigator.clipboard.writeText(value);
+                    } catch {
+                        // fallback por si el navegador bloquea clipboard (raro, pero pasa)
+                        const tmp = document.createElement('textarea');
+                        tmp.value = value;
+                        document.body.appendChild(tmp);
+                        tmp.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tmp);
+                    }
+
+                    // 1) animación del icono
+                    const icon = btn.querySelector('.copy-icon');
+                    icon?.classList.add('is-pop');
+                    setTimeout(() => icon?.classList.remove('is-pop'), 180);
+
+                    // 2) tooltip "Copiado"
+                    let toast = btn.querySelector('.copy-toast');
+                    if (!toast) {
+                        toast = document.createElement('span');
+                        toast.className = 'copy-toast';
+                        toast.textContent = 'Copiado';
+                        btn.appendChild(toast);
+                    }
+
+                    toast.classList.add('is-visible');
+                    setTimeout(() => toast.classList.remove('is-visible'), 850);
+                });
+            });
+
+            // Año automático en el footer
+            const y = document.getElementById('year');
+            if (y) y.textContent = String(new Date().getFullYear());
+        </script>
+    </footer>
+</Layout>

@@ -1,1 +1,151 @@
 @import "tailwindcss";
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: none; /* evita tirar hacia arriba y ver hueco */
+    background: #0b0b0b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 90px; /* ajusta a la altura de tu navbar */
+}
+
+@keyframes floatY {
+    0%   { transform: translateY(18px); }
+    50%  { transform: translateY(-26px); }
+    100% { transform: translateY(18px); }
+}
+
+.animate-float-y {
+    animation: floatY 5.5s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(16px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+
+.animate-scroll-dot {
+    animation: scrollDot 1.6s ease-in-out infinite;
+}
+
+/* Formación: estado base (antes de ser visible) */
+.formacion-left,
+.formacion-right {
+    opacity: 0;
+    will-change: transform, opacity;
+
+    /* ✅ antes tenías transition: none; y por eso la salida era brusca */
+    transition: opacity 750ms ease, transform 750ms ease;
+}
+
+/* Entran/salen “desde su lado” (más distancia) */
+.formacion-left {
+    transform: translateX(-90px);  /* viene / se va hacia la izquierda */
+}
+
+.formacion-right {
+    transform: translateX(90px);   /* viene / se va hacia la derecha */
+}
+
+/* Cuando se vuelve visible */
+.formacion-item.is-visible .formacion-left,
+.formacion-item.is-visible .formacion-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Un pelín de delay en la derecha para que se vea más pro (solo al entrar) */
+.formacion-item.is-visible .formacion-right {
+    transition-delay: 120ms;
+}
+
+/* ✅ IMPORTANTE: al salir, quitamos el delay para que no se “quede colgado” */
+.formacion-right {
+    transition-delay: 0ms;
+}
+
+/* Línea central “se dibuja” de abajo arriba */
+.formacion-line {
+    transform-origin: bottom;
+    transform: translateX(-50%) scaleY(0);
+    opacity: 0;
+    transition: transform 900ms ease, opacity 900ms ease;
+}
+
+.formacion-line.is-visible {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+}
+
+/* EXPERIENCIA reveal */
+.exp-title,
+.exp-text {
+    transition: opacity 950ms ease, transform 950ms ease;
+    will-change: opacity, transform;
+}
+
+.exp-line {
+    transition: transform 1000ms ease;
+    will-change: transform;
+}
+
+.exp-title.is-visible,
+.exp-text.is-visible {
+    opacity: 1;
+    transform: translateY(0) !important;
+}
+
+.exp-line.is-visible {
+    transform: scaleX(1) !important;
+}
+
+/* Tooltip "Copiado" */
+.copy-toast {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%) translateY(6px);
+    padding: 6px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: rgba(167, 243, 208, 0.95);
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 220ms ease, transform 220ms ease;
+    box-shadow: 0 0 22px rgba(16, 185, 129, 0.12);
+}
+
+.copy-toast.is-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* micro-animación del icono */
+.copy-icon {
+    transition: transform 180ms ease;
+}
+
+.copy-icon.is-pop {
+    transform: scale(1.15) rotate(-10deg);
+}

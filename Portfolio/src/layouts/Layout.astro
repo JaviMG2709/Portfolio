@@ -1,22 +1,128 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
+let title = "Portfolio";
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+    </head>
+
+
+
+    <body class="min-h-screen bg-[#0b0b0b] text-white antialiased">
+        <!-- NAVBAR -->
+        <header class="fixed top-0 z-50 w-full bg-[#0b0b0b]/80 backdrop-blur border-b border-white/5">
+            <nav class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+
+            <!-- Logo -->
+                <a href="#home" class="text-2xl font-semibold tracking-wide text-emerald-400">
+                    Javier Moreno
+                </a>
+
+                <!-- Links -->
+                <div class="flex items-center gap-10 text-sm font-medium text-white/90">
+                    <!-- Home (activo por ahora) -->
+                    <a
+                        href="#home"
+                        class="relative pb-1 hover:text-white transition after:content-[''] after:absolute
+                        after:left-0 after:-bottom-0.5 after:h-[2px] after:w-full after:bg-emerald-400
+                        after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+                        hover:after:scale-x-100 hover:after:origin-left
+                        after:hover:origin-left [@media(hover:hover)]:hover:after:scale-x-100"
+                        onmouseleave="this.style.setProperty('--o','right')"
+                    >
+                        Home
+                    </a>
+
+                    <!-- Formacion -->
+                    <a
+                        href="#formacion"
+                        class="relative pb-1 hover:text-white transition after:content-[''] after:absolute
+                        after:left-0 after:-bottom-0.5 after:h-[2px] after:w-full after:bg-emerald-400
+                        after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+                        hover:after:scale-x-100 hover:after:origin-left hover:after:origin-left"
+                    >
+                        Formacion
+                    </a>
+
+                    <!-- Experiencia -->
+                    <a
+                            href="#experiencia"
+                            class="relative pb-1 hover:text-white transition
+                        after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px]
+                        after:w-full after:bg-emerald-400 after:scale-x-0 after:origin-left
+                        after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
+                    >
+                        Experiencia
+                    </a>
+
+                    <!-- Projects -->
+                    <a
+                        href="#projects"
+                        class="relative pb-1 hover:text-white transition
+                        after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px]
+                        after:w-full after:bg-emerald-400 after:scale-x-0 after:origin-left
+                        after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
+                    >
+                        Projectos
+                    </a>
+
+                    <!-- Contact -->
+                    <a
+                        href="#contact"
+                        class="relative pb-1 hover:text-white transition
+                        after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-[2px] after:w-full
+                        after:bg-emerald-400 after:scale-x-0 after:origin-left after:transition-transform
+                        after:duration-300 hover:after:scale-x-100 hover:after:origin-left"
+                    >
+                        Contact
+                    </a>
+                </div>
+
+            </nav>
+        </header>
+
+        <!-- CONTENIDO -->
+        <main class="w-full">
+            <slot />
+        </main>
+
+        <script is:inline>
+            const OFFSET = 90;          // navbar normal
+            const EXTRA_OFFSET = 70;   // margen extra para formación y proyectos
+
+            document.querySelectorAll('a[href^="#"]').forEach((a) => {
+                a.addEventListener('click', (e) => {
+                    const href = a.getAttribute('href');
+                    if (!href || href === '#') return;
+
+                    const target = document.querySelector(href);
+                    if (!target) return;
+
+                    e.preventDefault();
+
+                    const needsExtra =
+                        href === '#formacion' || href === '#projects';
+
+                    const finalOffset = needsExtra
+                        ? OFFSET - EXTRA_OFFSET
+                        : OFFSET;
+
+                    const top =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        finalOffset;
+
+                    window.scrollTo({ top, behavior: 'smooth' });
+
+                    history.replaceState(null, '', href);
+                });
+            });
+        </script>
+    </body>
+</html>
