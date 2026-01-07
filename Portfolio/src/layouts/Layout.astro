@@ -1,15 +1,46 @@
 ---
 import "../styles/global.css";
-let title = "Portfolio";
----
+const {
+    title = "Javier Moreno | Desarrollador Full Stack",
+    description = "Portfolio de Javier Moreno: formación, experiencia y proyectos con Astro, Tailwind, Angular, Spring Boot y Godot.",
+    image = "/og/og-portfolio.jpg",
+    } = Astro.props;
 
+// GitHub Pages (usuario + repo)
+const SITE = "https://javimg2709.github.io";
+const canonicalUrl = new URL(Astro.url.pathname, SITE).toString(); // SIN #hash
+const ogImage = new URL(image, SITE).toString();
+---
 
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <!-- Básico -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <!-- SEO -->
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
+
+        <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Javier Moreno" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImage} />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <!-- Idioma -->
+        <meta http-equiv="Content-Language" content="es" />
     </head>
 
 
