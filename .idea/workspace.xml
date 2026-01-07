@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acc6f71d-5e49-4e11-b559-3fdd126f66ef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Portfolio/public/cv/JavierMorenoGarciaCV.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Portfolio/public/imagenes/FotoCVcopia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Portfolio/public/imagenes/ProyectoChinchilla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Portfolio/public/videos/ESInanimodelucro.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Portfolio/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/astro.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Portfolio/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Portfolio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Portfolio/src/layouts/Layout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/src/layouts/Layout.astro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Portfolio/src/pages/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/src/pages/index.astro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +21,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Portfolio" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="37wOoFcoOtCp4J9OpxiUlWJU8G4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,7 +36,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/javim/Documents/GitHub/Portfolio",
@@ -38,10 +45,39 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Portfolio" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Portfolio" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Portfolio/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -58,6 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1767810839202</updated>
       <workItem from="1767810840527" duration="1114000" />
+      <workItem from="1767812520607" duration="344000" />
     </task>
     <servers />
   </component>
