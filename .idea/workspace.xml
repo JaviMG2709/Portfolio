@@ -10,7 +10,6 @@
       <change afterPath="$PROJECT_DIR$/Portfolio/public/imagenes/ProyectoChinchilla.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Portfolio/public/robots.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Portfolio/public/videos/ESInanimodelucro.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Portfolio/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/astro.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Portfolio/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Portfolio/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Portfolio/package.json" afterDir="false" />
@@ -99,7 +98,7 @@
       <workItem from="1767810840527" duration="1114000" />
       <workItem from="1767812520607" duration="940000" />
       <workItem from="1767820222032" duration="7184000" />
-      <workItem from="1767870436679" duration="1293000" />
+      <workItem from="1767870436679" duration="1486000" />
     </task>
     <servers />
   </component>
