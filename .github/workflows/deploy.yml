@@ -27,23 +27,19 @@ jobs:
 
       - name: Install
         run: npm install
-        working-directory: Portfolio
 
       - name: Build
         run: npm run build
-        working-directory: Portfolio
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Portfolio/dist
+          path: dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
